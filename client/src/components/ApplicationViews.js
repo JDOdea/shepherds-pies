@@ -2,18 +2,30 @@ import { Route, Routes } from "react-router-dom";
 import { AuthorizedRoute } from "./auth/AuthorizedRoute";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import { OrderList } from "./orders/OrderList";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
     <Routes>
       <Route path="/">
-        <Route
+        <Route 
           index
           element={
             <AuthorizedRoute loggedInUser={loggedInUser}>
+              <OrderList />
             </AuthorizedRoute>
           }
         />
+        <Route path="orders">
+          <Route
+            index
+            element={
+              <AuthorizedRoute loggedInUser={loggedInUser}>
+                <OrderList />
+              </AuthorizedRoute>
+            }
+          />
+        </Route>
         <Route
           path="login"
           element={<Login setLoggedInUser={setLoggedInUser} />}

@@ -34,6 +34,11 @@ public class Order
                 total += _deliveryCost;
             }
 
+            if (Tipped.HasValue)
+            {
+                total += (decimal)Tipped;
+            }
+
             return total;
         }
     }
