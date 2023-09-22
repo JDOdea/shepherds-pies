@@ -1,0 +1,78 @@
+Table Employees {
+  id int [pk]
+  firstName varchar [not null]
+  lastName varchar [not null]
+}
+
+Table Orders {
+  id int [pk]
+  employeeId int
+  tableNumber int
+  driverId int
+  deliveryCost double
+  tipped bit
+  totalCost double
+  orderDate DateTime [not null]
+}
+
+Table OrderPizzas {
+  id int [pk]
+  orderId int
+  pizzaId int
+}
+
+Table Pizzas {
+  id int [pk]
+  sizeId int
+  cheeseId int
+  sauceId int
+  cost double
+}
+
+Table Sizes {
+  id int [pk]
+  sizeName varchar [not null]
+  size varchar [not null]
+  cost double
+}
+
+Table Cheeses {
+  id int [pk]
+  type varchar [not null]
+}
+
+Table Sauces {
+  id int [pk]
+  type varchar [not null]
+}
+
+Table PizzaToppings {
+  id int [pk]
+  pizzaId int
+  toppingId int
+  quantity int
+}
+
+Table Toppings {
+  id int [pk]
+  name varchar [not null]
+  price double
+}
+
+Ref: "Pizzas"."sizeId" < "Sizes"."id"
+
+Ref: "Pizzas"."cheeseId" < "Cheeses"."id"
+
+Ref: "Pizzas"."sauceId" < "Sauces"."id"
+
+Ref: "Pizzas"."id" < "PizzaToppings"."pizzaId"
+
+Ref: "Toppings"."id" < "PizzaToppings"."toppingId"
+
+Ref: "OrderPizzas"."pizzaId" < "Pizzas"."id"
+
+Ref: "OrderPizzas"."orderId" < "Orders"."id"
+
+Ref: "Orders"."employeeId" < "Employees"."id"
+
+Ref: "Orders"."driverId" < "Employees"."id"
