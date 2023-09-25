@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchNewestFirst, fetchOrder, fetchOrders } from "../../managers/orderManager";
+import { deleteOrder, fetchNewestFirst, fetchOrder, fetchOrders } from "../../managers/orderManager";
 import { Button, Input, Label, Modal, ModalHeader, Table } from "reactstrap";
 import { OrderDetailsModal } from "./OrderDetailsModal";
 
@@ -12,10 +12,13 @@ export const OrderList = () => {
     const [detailsVisible, setDetailsVisible] = useState(false);
 
     const detailsToggle = () => setDetailsModal(!detailsModal);
-    const detailsDismiss = () => setDetailsVisible(false);
 
     const getAllOrders = () => {
         fetchNewestFirst().then(setOrders);
+    }
+
+    const handleDelete = (id) => {
+        deleteOrder(id).then(getAllOrders);
     }
 
     useEffect(() => {
@@ -65,6 +68,7 @@ export const OrderList = () => {
                         <th># of Pizzas</th>
                         <th>Total Cost</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,6 +95,14 @@ export const OrderList = () => {
                                         detailsToggle();
                                     }}
                                 >Details</Button>
+                            </td>
+                            <td>
+                                <Button
+                                    color="danger"
+                                    onClick={() => {
+                                        handleDelete(o.id);
+                                    }}
+                                >Cancel</Button>
                             </td>
                         </tr>
                     ))}
