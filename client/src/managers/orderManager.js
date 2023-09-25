@@ -11,3 +11,9 @@ export const fetchNewestFirst = () => {
 export const fetchOrder = (id) => {
     return fetch(`${_apiUrl}/${id}`).then((res) => res.json());
 };
+
+export const deleteOrder = (id) => {
+    return fetch(`${_apiUrl}/${id}`, {
+        method: "DELETE"
+    });
+};

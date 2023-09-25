@@ -72,4 +72,19 @@ public class OrderController : ControllerBase
 
         return NotFound();
     }
+
+    [HttpDelete("{id}")]
+    //[Authorize]
+    public IActionResult DeleteOrder(int id)
+    {
+        Order foundOrder = _dbContext.Orders.SingleOrDefault(o => o.Id == id);
+        if (foundOrder != null)
+        {
+            _dbContext.Orders.Remove(foundOrder);
+            _dbContext.SaveChanges();
+            return NoContent();
+        }
+
+        return NotFound();
+    }
 }
