@@ -328,19 +328,19 @@ namespace ShepherdsPies.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "fe0cb316-b130-40db-bc15-90eb895d3e0f", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "b1f9e9c7-8d73-403d-ac3e-3ffc701ecbc0", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "075aa239-f0fa-46d7-8cb5-223d4064e582", 0, "4c164f3a-2ee2-4dfe-8935-69133f848077", "joshb@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEE8Z4d5fHu4UL5c1pI+AfaVewYYSfFPwIysEpFUCvQ+18Aoq9G7J9BcLi3YkTTnQpg==", null, false, "43f0bc9a-2505-45da-8f1e-7e7e87a669c3", false, "joshb" },
-                    { "5b795ef4-89bd-4de6-b6e1-6bb3dc469242", 0, "295b148b-8d4e-4c31-84c4-e5e6b0001eeb", "jdfitz@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEHHH2iZuk0P0iK9Ct87mbCzMSz+At7FFgfQ6GfmMQB3JmQ0crR3S9jT23xkLxzhY/Q==", null, false, "f4faeae6-4ce5-46fe-bba4-8175154946ec", false, "jdfitz" },
-                    { "6245ffde-88da-4745-bd81-32943de1fa00", 0, "0c4a3bf5-8a76-49fa-bbd8-6a775991ee33", "jbarton@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEAkwG4a/+exKKH90L2fVLer3EcNOO3/xkLjwLrcqo/hl7P9r7XlzwRdhB8iuE5trxQ==", null, false, "b3dd925a-a1b7-4a2e-9ec4-3b1eedb922f5", false, "jbarton" },
-                    { "8fe414ed-22f8-4dd5-8cde-f5bcf922cec0", 0, "427d9e04-bbbd-439b-9c0f-0be40929633d", "calebs@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEEbUUowrD8C2RD6bysd45BiysTEzkeADzRJZXELV15Qm7EABiY7qjrvjnyFZGH7A/Q==", null, false, "7d6a2e83-a563-4eb1-bd45-b7ef65a2161f", false, "csullivan" },
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "09ed1f9e-bd8e-4c2e-bcef-595b03ed6340", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEEaX5StMd60lxTyriiWZpTXaVTXKL+BFfH+YnauNnjbaFgxOJ0WYqeh2oflnvHNgOg==", null, false, "9f339232-3d32-4404-9a3f-f638befe828c", false, "Administrator" },
-                    { "e53af84d-c3d0-4db8-9a6a-680985b82553", 0, "32f86324-3c41-4185-8081-adb033a7c249", "greg@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEBZ+KbjnHxeJX56C6HbzOa1kaAzRa2jJsHPuKSf1EQW306fzUhIRzeuXpq+FWlkbGg==", null, false, "9f751b41-b233-41fb-94cc-2104e6649a0c", false, "greg" }
+                    { "075aa239-f0fa-46d7-8cb5-223d4064e582", 0, "25ad1937-8653-4953-b4da-6a46e0613a4d", "joshb@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEKsGvqbeQr+DgayLDMijGL4RusTblJPwQVHOguNDexUEDoU9E1F0+E91/UeGj4OGLQ==", null, false, "bbde6ef4-f169-4f4a-af8f-ddb8cd38aba4", false, "joshb" },
+                    { "5b795ef4-89bd-4de6-b6e1-6bb3dc469242", 0, "2b35f042-1421-484e-ab1e-31a23d0d3d73", "jdfitz@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEDSrM6kdwVAx/RsHKYS1sobLlFSXUgJrqpZ312PN21Zr1//ePoMeT+Vq9NxrwO4Nfw==", null, false, "deec9722-0da9-42d7-acb7-1f5432213ae9", false, "jdfitz" },
+                    { "6245ffde-88da-4745-bd81-32943de1fa00", 0, "d3a599c3-befe-4940-9fe7-a6116a72dae8", "jbarton@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEMaJlY+jcSqEo7kqURddZi56ZShHUjDM/gCxjyNTZkVE6M2YfPlvUt6G7T4c+0nQSQ==", null, false, "221499e6-9d4b-4ee2-86e7-52354939bfd1", false, "jbarton" },
+                    { "8fe414ed-22f8-4dd5-8cde-f5bcf922cec0", 0, "ec88d022-f102-4809-b920-79b126696f47", "calebs@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEFZ1t80PX2ujo1h3GAIyDDb474cJrd2sDT6dLu55BYdwz/GXZPIyp0ZnDii5agaMBg==", null, false, "4d0facc8-c96e-4db7-8dd3-d8db5a032967", false, "csullivan" },
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "e3714a86-3249-4a28-8b39-bb9114f5383d", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEIeCITpjq1SeoBsmcFIFcfvTbC9gtV4zB/MzFYSgbXoLGCw2a1f5D7Wdi4qXybp4qQ==", null, false, "e926cce2-f4ff-4f3c-9980-3f5289d137d1", false, "Administrator" },
+                    { "e53af84d-c3d0-4db8-9a6a-680985b82553", 0, "d8bda563-067e-4a83-a5b3-6272b598c41d", "greg@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEF4Okrfg2CBiwdIv5PqFRPPSHj1IQ/CqeG0n25PPxQ5CYcHkAjyL0I2QFjvIbrV4gQ==", null, false, "608f42f9-d697-48c5-bde6-b6a8bffd4247", false, "greg" }
                 });
 
             migrationBuilder.InsertData(
@@ -462,27 +462,27 @@ namespace ShepherdsPies.Migrations
                     { 3, 1, 8, 9 },
                     { 4, 2, 10, 1 },
                     { 5, 3, 11, 1 },
-                    { 6, 3, 7, 1 },
+                    { 6, 3, 7, 2 },
                     { 7, 4, 9, 1 },
-                    { 8, 5, 12, 1 },
-                    { 9, 5, 15, 1 },
-                    { 10, 5, 7, 1 },
+                    { 8, 5, 12, 3 },
+                    { 9, 5, 15, 4 },
+                    { 10, 5, 7, 5 },
                     { 11, 6, 7, 1 },
-                    { 12, 6, 4, 1 },
+                    { 12, 6, 4, 7 },
                     { 13, 7, 10, 1 },
-                    { 14, 8, 11, 1 },
-                    { 15, 9, 12, 1 },
-                    { 16, 9, 10, 1 },
-                    { 17, 10, 5, 1 },
+                    { 14, 8, 11, 11 },
+                    { 15, 9, 12, 8 },
+                    { 16, 9, 10, 10 },
+                    { 17, 10, 5, 4 },
                     { 18, 11, 6, 1 },
-                    { 19, 11, 8, 1 },
-                    { 20, 11, 7, 1 },
+                    { 19, 11, 8, 3 },
+                    { 20, 11, 7, 6 },
                     { 21, 12, 8, 1 },
-                    { 22, 12, 9, 1 },
+                    { 22, 12, 9, 5 },
                     { 23, 13, 10, 1 },
-                    { 24, 14, 10, 1 },
-                    { 25, 15, 7, 1 },
-                    { 26, 15, 8, 1 }
+                    { 24, 14, 10, 2 },
+                    { 25, 15, 7, 2 },
+                    { 26, 15, 8, 3 }
                 });
 
             migrationBuilder.CreateIndex(

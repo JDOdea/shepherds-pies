@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShepherdsPies.Data;
+using ShepherdsPies.Models;
 
 namespace ShepherdsPies.Controllers;
 
@@ -45,5 +46,30 @@ public class OrderController : ControllerBase
             .ThenInclude(pt => pt.Topping)
             .OrderByDescending(o => o.OrderDate)
             .ToList());
+    }
+
+    [HttpGet("{id}")]
+    //[Authorize]
+    public IActionResult GetById(int id)
+    {
+        Order foundOrder = _dbContext.Orders.SingleOrDefault(o => o.Id == id);
+        if (foundOrder != null)
+        {
+            return Ok(_dbContext.Orders
+                .Include(o => o.Employee)
+                .Include(o => o.Driver)
+                .Include(o => o.Pizzas)
+                .ThenInclude(p => p.Size)
+                .Include(o => o.Pizzas)
+                .ThenInclude(p => p.Cheese)
+                .Include(o => o.Pizzas)
+                .ThenInclude(p => p.Sauce)
+                .Include(o => o.Pizzas)
+                .ThenInclude(p => p.PizzaToppings)
+                .ThenInclude(pt => pt.Topping)
+                .SingleOrDefault(o => o.Id == id));
+        }
+
+        return NotFound();
     }
 }
