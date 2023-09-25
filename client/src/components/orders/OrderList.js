@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-import { fetchNewestFirst, fetchOrders } from "../../managers/orderManager";
-import { Input, Label, Table } from "reactstrap";
+import { fetchNewestFirst, fetchOrder, fetchOrders } from "../../managers/orderManager";
+import { Button, Input, Label, Modal, ModalHeader, Table } from "reactstrap";
+import { OrderDetailsModal } from "./OrderDetailsModal";
 
 export const OrderList = () => {
     const [orders, setOrders] = useState([]);
     const [filteredOrders, setfilter ] = useState([]);
+    const [selectedOrder, setSelectedOrder] = useState();
+
+    const [detailsModal, setDetailsModal] = useState(false);
+    const [detailsVisible, setDetailsVisible] = useState(false);
+
+    const detailsToggle = () => setDetailsModal(!detailsModal);
+    const detailsDismiss = () => setDetailsVisible(false);
 
     const getAllOrders = () => {
         fetchNewestFirst().then(setOrders);
@@ -76,10 +84,28 @@ export const OrderList = () => {
                             <td>{displayDateTime(o.orderDate)}</td>
                             <td>{o.pizzas.length}</td>
                             <td>${(Math.round(o.totalCost * 100) / 100).toFixed(2)}</td>
+                            <td>
+                                <Button
+                                    onClick={() => {
+                                        fetchOrder(o.id).then(setSelectedOrder);
+                                        detailsToggle();
+                                    }}
+                                >Details</Button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
+            {
+                detailsModal
+                ?
+                <Modal isOpen={detailsModal} toggle={detailsToggle}>
+                    <ModalHeader toggle={detailsToggle}>Details</ModalHeader>
+                    <OrderDetailsModal orderObject={selectedOrder}/>
+                </Modal>
+                :
+                ""
+            }
         </>
     )
 }

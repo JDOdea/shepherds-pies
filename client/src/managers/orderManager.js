@@ -6,4 +6,8 @@ export const fetchOrders = () => {
 
 export const fetchNewestFirst = () => {
     return fetch(`${_apiUrl}/newest`).then((res) => res.json());
-}
+};
+
+export const fetchOrder = (id) => {
+    return fetch(`${_apiUrl}/${id}`).then((res) => res.json());
+};
