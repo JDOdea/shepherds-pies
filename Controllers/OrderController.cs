@@ -73,6 +73,34 @@ public class OrderController : ControllerBase
         return NotFound();
     }
 
+    [HttpPost]
+    //[Authorize]
+    public IActionResult CreateOrder(Order order)
+    {
+        try
+        {
+            foreach (var p in order.Pizzas)
+            {
+                p.Size = _dbContext.Sizes.SingleOrDefault(s => s.Id == p.SizeId);
+                p.Cheese = _dbContext.Cheeses.SingleOrDefault(c => c.Id == p.CheeseId);
+                p.Sauce = _dbContext.Sauces.SingleOrDefault(s => s.Id == p.SauceId);
+                foreach (var t in p.PizzaToppings)
+                {
+                    t.Topping = _dbContext.Toppings.SingleOrDefault(top => top.Id == t.ToppingId);
+                }
+            }
+            order.OrderDate = DateTime.Now;
+
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
+            return Created($"/api/order/{order.Id}", order);
+        }
+        catch (DbUpdateException)
+        {
+            return BadRequest("Invalid data submitted");
+        }
+    }
+
     [HttpDelete("{id}")]
     //[Authorize]
     public IActionResult DeleteOrder(int id)

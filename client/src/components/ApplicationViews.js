@@ -3,6 +3,7 @@ import { AuthorizedRoute } from "./auth/AuthorizedRoute";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import { OrderList } from "./orders/OrderList";
+import { CreateOrder } from "./orders/CreateOrder";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -22,6 +23,14 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
             element={
               <AuthorizedRoute loggedInUser={loggedInUser}>
                 <OrderList />
+              </AuthorizedRoute>
+            }
+          />
+          <Route 
+            path="new"
+            element={
+              <AuthorizedRoute loggedInUser={loggedInUser}>
+                <CreateOrder />
               </AuthorizedRoute>
             }
           />

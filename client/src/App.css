@@ -8,3 +8,92 @@
   justify-content: center;
   margin-top: 35px;
 }
+
+.alert-float {
+  position: absolute;
+  top: 10;
+  left: 250;
+}
+
+.orderType {
+  padding-left: 25px;
+}
+
+.orderTypeCheckbox {
+  margin-left: 5px;
+}
+
+.newOrder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newOrderLeft {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.newOrderSelectors {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.newOrderToppings {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100px;
+}
+
+.newOrderTopping {
+  display: flex;
+  position: relative;
+}
+
+.newOrderToppingAmount {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  height: 25px;
+}
+
+.newOrderType {
+  padding-left: 25px;
+}
+
+.newOrderTypeCheckbox {
+  margin-left: 5px;
+}
+
+.newOrderAddPizza {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newOrderRight {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.newOrderCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: gainsboro;
+  border-radius: .5rem;
+  height: 80%;
+  width: 90%;
+}
+
+.newOrderCartHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.newOrderCartButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deleteOrder, fetchNewestFirst, fetchOrder, fetchOrders } from "../../managers/orderManager";
 import { Button, Input, Label, Modal, ModalHeader, Table } from "reactstrap";
+import { useNavigate } from "react-router-dom/dist";
 import { OrderDetailsModal } from "./OrderDetailsModal";
 
 export const OrderList = () => {
@@ -10,6 +11,8 @@ export const OrderList = () => {
 
     const [detailsModal, setDetailsModal] = useState(false);
     const [detailsVisible, setDetailsVisible] = useState(false);
+
+    const navigate = useNavigate();
 
     const detailsToggle = () => setDetailsModal(!detailsModal);
 
@@ -108,6 +111,12 @@ export const OrderList = () => {
                     ))}
                 </tbody>
             </Table>
+            <Button
+                color="success"
+                onClick={() => {
+                    navigate("new")
+                }}
+            >Create an Order</Button>
             {
                 detailsModal
                 ?
