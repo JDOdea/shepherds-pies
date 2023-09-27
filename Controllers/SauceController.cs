@@ -12,7 +12,7 @@ public class SauceController : ControllerBase
 
     public SauceController(ShepherdsPiesDbContext context)
     {
-
+        _dbContext = context;
     }
 
     [HttpGet]
