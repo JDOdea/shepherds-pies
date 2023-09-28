@@ -16,7 +16,7 @@ public class SauceController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetSauces()
     {
         return Ok(_dbContext.Sauces
@@ -24,7 +24,7 @@ public class SauceController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetSauce(int id)
     {
         return Ok(_dbContext.Sauces

@@ -20,6 +20,14 @@ export const postOrder = (order) => {
     }).then((res) => res.json());
 };
 
+export const putOrder = (id, order) => {
+    return fetch(`${_apiUrl}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order)
+    });
+}
+
 export const deleteOrder = (id) => {
     return fetch(`${_apiUrl}/${id}`, {
         method: "DELETE"

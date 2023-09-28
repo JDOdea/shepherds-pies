@@ -16,7 +16,7 @@ public class CheeseController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetCheeses()
     {
         return Ok(_dbContext.Cheeses
@@ -24,7 +24,7 @@ public class CheeseController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetCheese(int id)
     {
         return Ok(_dbContext.Cheeses

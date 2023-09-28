@@ -97,3 +97,44 @@
   flex-direction: column;
   align-items: center;
 }
+
+.editOrderPizzas {
+  display: flex;
+}
+
+.editOrderForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.editOrderSelectors {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.editOrderType {
+  padding-left: 25px;
+}
+
+.editOrderTypeCheckbox {
+  margin-left: 5px;
+}
+
+.editOrderToppings {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100px;
+}
+
+.editOrderTopping {
+  display: flex;
+  position: relative;
+}
+
+.editOrderToppingAmount {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  height: 25px;
+}
