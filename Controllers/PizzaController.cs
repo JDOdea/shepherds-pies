@@ -17,7 +17,7 @@ public class PizzaController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetPizzas()
     {
         return Ok(_dbContext.Pizzas

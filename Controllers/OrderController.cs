@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShepherdsPies.Data;
@@ -17,7 +18,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetOrders()
     {
         return Ok(_dbContext.Orders
@@ -33,7 +34,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet("newest")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetByNewest()
     {
         return Ok(_dbContext.Orders
@@ -49,7 +50,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetById(int id)
     {
         Order foundOrder = _dbContext.Orders.SingleOrDefault(o => o.Id == id);
@@ -74,7 +75,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize]
+    [Authorize]
     public IActionResult CreateOrder(Order order)
     {
         try
@@ -101,8 +102,46 @@ public class OrderController : ControllerBase
         }
     }
 
+    [HttpPut("{id}")]
+    [Authorize]
+    public IActionResult EditOrder(int id, Order updatedOrder)
+    {
+        Order order = _dbContext.Orders.SingleOrDefault(o => o.Id == id);
+
+        if (order != null) 
+        {
+            updatedOrder.Employee = _dbContext.UserProfiles.SingleOrDefault(up => up.Id == updatedOrder.EmployeeId);
+            updatedOrder.Driver = _dbContext.UserProfiles.SingleOrDefault(up => up.Id == updatedOrder.DriverId);
+
+            foreach (var p in updatedOrder.Pizzas)
+            {
+                p.Size = _dbContext.Sizes.SingleOrDefault(s => s.Id == p.SizeId);
+                p.Cheese = _dbContext.Cheeses.SingleOrDefault(c => c.Id == p.CheeseId);
+                p.Sauce = _dbContext.Sauces.SingleOrDefault(s => s.Id == p.SauceId);
+                foreach (var t in p.PizzaToppings)
+                {
+                    t.Topping = _dbContext.Toppings.SingleOrDefault(top => top.Id == t.ToppingId);
+                }
+            }
+
+            order.EmployeeId = updatedOrder.EmployeeId;
+            order.Employee = updatedOrder.Employee;
+            order.TableNumber = updatedOrder.TableNumber;
+            order.DriverId = updatedOrder.DriverId;
+            order.Driver = updatedOrder.Driver;
+            order.Tipped = updatedOrder.Tipped;
+            order.Pizzas = updatedOrder.Pizzas;
+
+            _dbContext.SaveChanges();
+
+            return NoContent();
+        }
+
+        return NotFound();
+    }
+
     [HttpDelete("{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult DeleteOrder(int id)
     {
         Order foundOrder = _dbContext.Orders.SingleOrDefault(o => o.Id == id);

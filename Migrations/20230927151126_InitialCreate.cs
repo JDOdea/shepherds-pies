@@ -328,19 +328,19 @@ namespace ShepherdsPies.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "b1f9e9c7-8d73-403d-ac3e-3ffc701ecbc0", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "1c77f02b-7b36-4cb9-aeda-f10705fd1edc", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "075aa239-f0fa-46d7-8cb5-223d4064e582", 0, "25ad1937-8653-4953-b4da-6a46e0613a4d", "joshb@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEKsGvqbeQr+DgayLDMijGL4RusTblJPwQVHOguNDexUEDoU9E1F0+E91/UeGj4OGLQ==", null, false, "bbde6ef4-f169-4f4a-af8f-ddb8cd38aba4", false, "joshb" },
-                    { "5b795ef4-89bd-4de6-b6e1-6bb3dc469242", 0, "2b35f042-1421-484e-ab1e-31a23d0d3d73", "jdfitz@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEDSrM6kdwVAx/RsHKYS1sobLlFSXUgJrqpZ312PN21Zr1//ePoMeT+Vq9NxrwO4Nfw==", null, false, "deec9722-0da9-42d7-acb7-1f5432213ae9", false, "jdfitz" },
-                    { "6245ffde-88da-4745-bd81-32943de1fa00", 0, "d3a599c3-befe-4940-9fe7-a6116a72dae8", "jbarton@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEMaJlY+jcSqEo7kqURddZi56ZShHUjDM/gCxjyNTZkVE6M2YfPlvUt6G7T4c+0nQSQ==", null, false, "221499e6-9d4b-4ee2-86e7-52354939bfd1", false, "jbarton" },
-                    { "8fe414ed-22f8-4dd5-8cde-f5bcf922cec0", 0, "ec88d022-f102-4809-b920-79b126696f47", "calebs@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEFZ1t80PX2ujo1h3GAIyDDb474cJrd2sDT6dLu55BYdwz/GXZPIyp0ZnDii5agaMBg==", null, false, "4d0facc8-c96e-4db7-8dd3-d8db5a032967", false, "csullivan" },
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "e3714a86-3249-4a28-8b39-bb9114f5383d", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEIeCITpjq1SeoBsmcFIFcfvTbC9gtV4zB/MzFYSgbXoLGCw2a1f5D7Wdi4qXybp4qQ==", null, false, "e926cce2-f4ff-4f3c-9980-3f5289d137d1", false, "Administrator" },
-                    { "e53af84d-c3d0-4db8-9a6a-680985b82553", 0, "d8bda563-067e-4a83-a5b3-6272b598c41d", "greg@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEF4Okrfg2CBiwdIv5PqFRPPSHj1IQ/CqeG0n25PPxQ5CYcHkAjyL0I2QFjvIbrV4gQ==", null, false, "608f42f9-d697-48c5-bde6-b6a8bffd4247", false, "greg" }
+                    { "075aa239-f0fa-46d7-8cb5-223d4064e582", 0, "b3e3cbb4-b7a9-4ed8-9eb8-933272c37f99", "joshb@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEAJLKvO549VLEbv2+PvVPv7+B2sDlOccZi7IV0qgPce8+Ne0dvQeKAq0hF8BWXwLEw==", null, false, "5c5d99a0-852e-4242-a349-86836960b1af", false, "joshb" },
+                    { "5b795ef4-89bd-4de6-b6e1-6bb3dc469242", 0, "2f28b805-1e02-400d-85ba-eba5945d8c7b", "jdfitz@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEP4ZxQmDYSSOb+bSQqMIjsGkxewb+DnSdmcqszHxET18aZjGHkI4aOFW2IcYx8ixyw==", null, false, "1839e41c-790c-4112-994e-bdd68ec0e002", false, "jdfitz" },
+                    { "6245ffde-88da-4745-bd81-32943de1fa00", 0, "f1fef0a7-0ef3-4099-b785-27a66d0f2c69", "jbarton@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEKkcKFcebbJbR4FDSh+GYS6cgCDUyBRTRwzTAF76dG41HWTLigTuJP936c/eUS8oLA==", null, false, "83e378ed-1bb7-4ecc-a19b-8f8cae09050f", false, "jbarton" },
+                    { "8fe414ed-22f8-4dd5-8cde-f5bcf922cec0", 0, "3c29277e-a82d-4554-a358-942f8ec443e7", "calebs@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEL3mjlnwkpraNl2asOBNi6DJpg9M71R3W5MYJJclaIqbwxshwr8brd83VeFiLP/GRg==", null, false, "111b33d9-c0f4-4e8c-aaa7-8e32b55d4557", false, "csullivan" },
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "93b41233-ed30-4520-baac-b353a15eece6", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEBhxsgObiPj7PDbWbzmmM8YQUTNlE5sOnQY5xcXdeRJYaNhVn9Ne+gVt59tNvlCilA==", null, false, "5ee432ef-1358-4073-b28b-9c8026917dad", false, "Administrator" },
+                    { "e53af84d-c3d0-4db8-9a6a-680985b82553", 0, "1198516a-cfa2-480f-94a1-b16968047e00", "greg@gmail.com", false, false, null, null, null, "AQAAAAEAACcQAAAAEKuqR1jDakaF7zIpdKvwPOShEsmQqQEpeeaKGt3uq+Id/PNWFG7ik/WbTGmYQmrOEQ==", null, false, "c8cfff55-48fa-4eb7-bf82-3a6087b28076", false, "greg" }
                 });
 
             migrationBuilder.InsertData(

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Alert, Button, Form, FormGroup, Input, InputGroup, InputGroupText, Label } from "reactstrap";
 import { fetchAllUsers } from "../../managers/userManager";
 import { fetchSizes } from "../../managers/sizeManager";
 import { fetchCheeses } from "../../managers/cheeseManager";
@@ -34,6 +34,8 @@ export const CreateOrder = () => {
 
     const [hasDriver, setHasDriver] = useState(false);
     const [driverId, setDriverId] = useState(null);
+
+    const [tip, setTip] = useState(0.00);
 
     const [visible, setVisible] = useState(false);
 
@@ -124,6 +126,7 @@ export const CreateOrder = () => {
             employeeId,
             tableNumber,
             driverId,
+            tipped: tip,
             pizzas
         }
 
@@ -352,6 +355,28 @@ export const CreateOrder = () => {
                         :
                         ""
                     }
+                    <FormGroup>
+                        <Label htmlFor="tip">Tip:</Label>
+                        <InputGroup>
+                            <InputGroupText>
+                                $
+                            </InputGroupText>
+                            <input 
+                            style={{
+                                width: '18rem'
+                            }}
+                            name="tip"
+                            type="number"
+                            bssize="sm"
+                            min="0.00"
+                            step="0.01"
+                            presicion={2}
+                            onChange={(e) => {
+                                setTip(parseFloat(e.target.value));
+                            }}
+                            />
+                        </InputGroup>
+                    </FormGroup>
                     <Button
                         onClick={() => {
                             handleAddPizza();

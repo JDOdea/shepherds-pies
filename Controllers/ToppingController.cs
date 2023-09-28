@@ -17,7 +17,7 @@ public class ToppingController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetToppings()
     {
         return Ok(_dbContext.Toppings
@@ -25,7 +25,7 @@ public class ToppingController : ControllerBase
     }
 
     [HttpGet("pizza{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetToppingsForPizza(int id)
     {
         return Ok(_dbContext.PizzaToppings

@@ -16,7 +16,7 @@ public class SizeController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetSizes()
     {
         return Ok(_dbContext.Sizes
@@ -24,7 +24,7 @@ public class SizeController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    //[Authorize]
+    [Authorize]
     public IActionResult GetSize(int id)
     {
         return Ok(_dbContext.Sizes
